@@ -49,3 +49,25 @@
 //       0      0      2      0
 //     0 0 1  0 1 2  1 2 4  2 4 0
 //
+
+// declare a variable to take in max value,
+// create a loop to iterate through 2d array
+// iterate until you reach third to last element in the array (column)
+// compare with max and make new max if value compared > max
+// after row is finished increment row and keep comparing until row < number of rows - 3
+
+
+function hourglassSum(arr) {
+    let max = -63
+    for(let i = 0; i <4; i++){
+        for(let j = 0; j <4; j++){
+            let t = arr[i][j] + arr[i][j+1] + arr[i][j+2] + arr[i+1][j+1] + arr[i+2][j] + arr[i+2][j+1] + arr[i+2][j+2];
+            if(t > max){
+                max = t
+            }
+        }
+
+    }
+    return(max)
+}
+    hourglassSum([[1,1,1,0,0,0],[0,1,0,0,0,0],[1,1,1,0,0,0],[0,0,2,4,4,0],[0,0,0,2,0,0],[0,0,1,2,4,0]])
