@@ -11,39 +11,46 @@
 // Complete the function minimumBribes in the editor below. It must print an integer representing the minimum number of bribes necessary, or Too chaotic if the line configuration is not possible.
 //
 // minimumBribes has the following parameter(s):
-//
 // q: an array of integers
+
 //  Print Too chaotic if the state is invalid, i.e. it requires a person to have bribed more than 2 people
 
-function minimumBribes(q) {
-    let bribes = 0;
-        let swapped = true;
-        let tooChaotic = false;
-        let firstRun = true;
+// Input: Array of numbers
+// Output: number of bribes or if a single person looks to have bribed more than 2 people.
 
-        while (swapped === true) {
-            swapped = false;
-            for (let i = 0; q.length > i; i++) {
-                if (q[i] - i > 3 && firstRun) {
-                    tooChaotic = true;
-                }
+// steps initialize a counter for numBribes
+// loop through the array
+// if arr[i] > 3 return tooChaotic
+// if q[i] > q[i+1]
+// increment bribes and swap elements for next iteration of the for loop
+// this is essentially a sorting algo
 
-                if (q[i] && q[i + 1] && q[i] > q[i + 1]) {
-                    let temp = q[i];
-                    q[i] = q[i + 1];
-                    q[i + 1] = temp;
-                    swapped = true;
-                    bribes++;
-                }
-            }
-            firstRun = false;
+function minimumBribes(q){
+let bribes = 0
+let swapped = true
+let tooChaotic = false
+
+while(swapped){
+    for(let i = 0; i < q.length; i++){
+        swapped = false
+        if(q[i] - 0 > 3){
+            tooChaotic = true
         }
-
-        if (tooChaotic) {
-            console.log("Too chaotic");
-        } else {
-            console.log(bribes);
+        if (q[i] && q[i + 1] && q[i] > q[i + 1]) {
+            let temp = q[i];
+            q[i] = q[i + 1];
+            q[i + 1] = temp;
+            swapped = true;
+            bribes++;
         }
+    }
 
+    }
+    if (tooChaotic) {
+           console.log("Too chaotic");
+       } else {
+           console.log(bribes);
+       }
 }
-minimumBribes([2,5,1,3,4])
+
+(minimumBribes([2,5,1,3,4]))
