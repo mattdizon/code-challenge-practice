@@ -23,32 +23,36 @@
     // increment our swap
 
 
-function minimumSwaps(q){
-    let swaps = 0
-//function to find where the element is
-    let index = (arr,idx) =>{
-        let iterator=0
-        while(arr[iterator]!==idx+1){
-            iterator++
-        }
-    return iterator
+    function findIndice(arr,i){
+      let iterator=0
+      while(arr[iterator]!==i+1){
+        iterator++
+      }
+      return iterator
     }
-    // function to swap current element with the correct one
-    let swap = (arr,x,y) =>{
-        let temp=arr[x]
-        arr[x]=arr[y]
-        arr[y]=temp
-    }
-    //loop to call both functions and increment swap counter
-    for(let i=0;i<q.length-1;i++){
-        if(q[i]!==i+1){
-            swap(q,index(q,i),i)
-            swaps++
-        }
-    }
-return (swaps)
 
-}
+    function swap(arr,x,y){
+      let temp=arr[x]
+      arr[x]=arr[y]
+      arr[y]=temp
+    }
+
+
+
+    function minimumSwaps(arr){
+      let i=0;
+      let counter=0;
+      let size=arr.length;
+
+      for(i=0;i<size-1;i++){
+        if(arr[i]!==i+1){
+          let index=findIndice(arr,i)
+          swap(arr,index,i)
+          counter++
+        }
+      }
+      return counter
+    }
 
 
 
