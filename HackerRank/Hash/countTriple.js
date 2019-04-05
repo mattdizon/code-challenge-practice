@@ -12,27 +12,22 @@
 // function to get array of all triplet possibilities
 
 function getTriplets(arr, r){
-    let triple = []
-    let i = 0
-    while(i <= arr.length - 3){
-
-        let j = i + 1
-        if(arr[j]/arr[i] == r){
-            let k = j + 1
-
-            if(arr[k]/arr[j] == r){
-                triple.push([arr[i],arr[j],arr[k]])
-                i++
-            }
-            else{
-                j+=1
-            }
-
-        }
-        i++
-
-    }
-    return(triple)
+    let triplets = 0;
+   const count = [];
+   const pairs = [];
+   for (let n = 0; n < arr.length; n++) {
+       const i = arr[n]
+       const ir = i/r
+       if (count[i] === undefined) {count[i] = 0; pairs[i] = 0}
+       if (pairs[ir]) {
+           triplets += pairs[ir]
+       }
+       if (count[ir]) {
+           pairs[i] += count[ir]
+       }
+       count[i]++
+   }
+   return triplets;
 }
 
 
