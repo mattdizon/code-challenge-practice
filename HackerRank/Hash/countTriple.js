@@ -8,7 +8,32 @@
 
 // steps
 // read in array take the first element(n), compare it with the n+1 if n+1/n = r add it to the array, then check the n+2 element,if n+2/n+1 = r add it if not check the next
-function countTriplets(arr, r) {
 
+// function to get array of all triplet possibilities
 
+function getTriplets(arr, r){
+    let triple = []
+    let i = 0
+    while(i <= arr.length - 3){
+
+        let j = i + 1
+        if(arr[j]/arr[i] == r){
+            let k = j + 1
+
+            if(arr[k]/arr[j] == r){
+                triple.push([arr[i],arr[j],arr[k]])
+                i++
+            }
+            else{
+                j+=1
+            }
+
+        }
+        i++
+
+    }
+    return(triple)
 }
+
+
+console.log(getTriplets([2,4,8],2));

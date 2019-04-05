@@ -56,5 +56,3 @@ function makeAnagram(a, b) {
 
     return(deleteCount)
 }
-
-makeAnagram("hattdt", "catqt")
