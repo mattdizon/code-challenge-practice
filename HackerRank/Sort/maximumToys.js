@@ -12,7 +12,7 @@ function maximumToys(prices, k) {
     for(let i = 0; i < prices.length; i++){
         for(let j = 0; j < prices.length; j++){
             if(prices[j]>prices[j+1]){
-                temp = prices[j]
+                let temp = prices[j]
                 prices[j] = prices[j+1]
                 prices[j+1] = temp
             }
@@ -31,4 +31,3 @@ function maximumToys(prices, k) {
     }
     return toys
 }
-maximumToys([3,1,2,6,5],2)
