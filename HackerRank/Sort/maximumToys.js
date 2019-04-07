@@ -7,10 +7,10 @@
 
 function maximumToys(prices, k) {
     //worst sort method to use bubblesort(O(n^2))
-    budget = 0
-    toys = 0
-    for(i = 0; i < prices.length; i++){
-        for(j = 0; j < prices.length; j++){
+    let budget = 0
+    let toys = 0
+    for(let i = 0; i < prices.length; i++){
+        for(let j = 0; j < prices.length; j++){
             if(prices[j]>prices[j+1]){
                 temp = prices[j]
                 prices[j] = prices[j+1]
@@ -18,6 +18,17 @@ function maximumToys(prices, k) {
             }
         }
     }
-    
+    let idx = 0
+    while(budget <= k){
+        if(budget + prices[idx] <= k){
+            budget += prices[idx]
+            idx++
+            toys++
+        }
+        else{
+            break
+        }
+    }
+    return toys
 }
 maximumToys([3,1,2,6,5],2)
