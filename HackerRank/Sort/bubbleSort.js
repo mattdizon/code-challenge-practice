@@ -38,6 +38,5 @@ function countSwaps(a) {
     console.log(`Array is sorted in ${swaps} swaps.`)
     console.log(`First Element: ${a[0]}`)
     console.log(`Last Element: ${a[x]}`)
-
 }
 countSwaps([3,2,1])
