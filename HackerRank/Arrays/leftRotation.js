@@ -10,11 +10,13 @@
 
 function rotLeft(a, d) {
     let truncated = a.splice(0, d)
-
     for (let i = 0; i <= truncated.length - 1; i++) {
+
         a.push(truncated[i])
+
+
     }
-    console.log(a)
+
 
 }
 
