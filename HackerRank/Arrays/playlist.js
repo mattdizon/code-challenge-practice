@@ -22,14 +22,17 @@ function playlist(songs, k, q){
     else if(k > len/2 && requestedIdx > len/2) {
         min = requestedIdx - k
     }
-    else if (k < len/2 && requestedIdx > len/2){
+    else if (k < len/2 && requestedIdx >= len/2){
         min = k - requestedIdx + len
     }
+    else if (k > len/2 && requestedIdx < len/2){
+        min = k - requestedIdx - len
+    }
 
-    console.log(min)
+    console.log(Math.abs(min))
 }
 // current song is idx 1
 // requested song is idx 4
 //
 //
-playlist(['a','b','c','d','e','f','g','h'],0,'e')
+playlist(['a','b','c','d','e','f','g','h'],6,'c')
