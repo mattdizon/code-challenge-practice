@@ -19,6 +19,6 @@ function gradingStudents(grades){
             rounded.push(grades[i])
         }
     }
-    console.log(rounded);
+    return(rounded);
 }
 gradingStudents([73,67,38,33])
