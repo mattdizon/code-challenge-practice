@@ -10,5 +10,6 @@ function reverseArray(a) {
         a[last] = temp
         last--
     }
+    return a
 }
 reverseArray([1,2,3,4,5])
