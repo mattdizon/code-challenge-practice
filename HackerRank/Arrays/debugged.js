@@ -48,5 +48,5 @@ function solution(S) {
     }
     return best_char;
 }
-solution("helloe");
+console.log(solution("aahelloe"))
 
