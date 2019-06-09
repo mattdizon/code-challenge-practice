@@ -22,3 +22,5 @@ function solution(S) {
 
     return best_char;
 }
+console.log(solution("helloe"));
+
