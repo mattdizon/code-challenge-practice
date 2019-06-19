@@ -7,7 +7,7 @@
 // input: Array 
 // Output highest possible appeal 
 
-function trip(A){
+function trip(A){   
     start = A[0]
     end = A[0]
     for(let i = 0; i < A.length; i++){
