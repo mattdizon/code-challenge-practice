@@ -2,7 +2,7 @@
 //
 // Return: a string formatted as a list of names separated by commas except for the last two names, which should be separated by an ampersand.
 
-
+ 
 //take the list of names and iterate until length - 2 @ length -2 append last 2 names with &
 function list(names){
     let strList = ""
