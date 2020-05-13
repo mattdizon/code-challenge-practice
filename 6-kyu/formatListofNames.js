@@ -17,6 +17,7 @@ function list(names){
     else if(names.length === 1){
         strList = names[names.length -1].name
     }
+    
 
 
 
